@@ -65,7 +65,7 @@ using namespace v8;
     return Undefined();
   }
 
-  int Face::Analize(eio_req *req)
+  void Face::Analize(eio_req *req)
   {
     face_baton_t *baton = static_cast<face_baton_t *>(req->data);
     IplImage* gray_frame;
@@ -74,7 +74,7 @@ using namespace v8;
 	baton->fc->gray = gray_frame;
 
     //cvReleaseImage(&gray_frame);
-    return 0;
+    return;
   }
 
   int Face::AfterAnalize(eio_req *req)

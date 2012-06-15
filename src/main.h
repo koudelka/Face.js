@@ -48,7 +48,7 @@ public:
     Persistent<Function> cb;
   };
 
-  static int Analize(eio_req *req);
+  static void Analize(eio_req *req);
   static int AfterAnalize(eio_req *req);
 
   static Handle<Value> GetImg(Local<String> name,	const AccessorInfo& info);
